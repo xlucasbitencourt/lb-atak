@@ -4,7 +4,7 @@ const cors = require("cors");
 const search = require("./src/search");
 
 const app = express();
-const port = process.env.BACKEND_PORT || 3001;
+const port = 3001;
 
 app.use(cors());
 
