@@ -11,6 +11,7 @@ function App() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -24,7 +25,10 @@ function App() {
       setResults(response.data);
     } catch (error) {
       console.error("Aconteceu um erro: ", error);
-      
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      } , 2000);
     }
     setLoading(false);
   };
@@ -59,6 +63,7 @@ function App() {
         </Form.Group>
       </Form>
       {loading && <h2>Carregando...</h2>}
+      {error && <h2>Erro ao carregar os dados</h2>}
       <div>
         {results.map((result, index) => (
           <Card style={{ margin: "1% 0" }} key={index}>
