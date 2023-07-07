@@ -1,3 +1,7 @@
+# Teste para desenvolvedor
+
+Este teste foi feito utilizando Node.js e React.
+
 ## Pré-requisitos
 
 Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
